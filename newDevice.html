@@ -1,0 +1,120 @@
+<html lang="pl">
+<head>
+  <title>Marvex - System obsługi zleceń</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style src="styles.css"></style>
+</head>
+<body>
+  <div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header"><a class="navbar-logo" href="example.html"><img id="logo" src="http://marvex.pl/images/logo2.png" alt="" width="300vh"></a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse navbar-menubuilder">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="newClient.html" class="hvr-underline-reveal">Rejestracja klienta</a>
+          </li>
+          <li><a href="newDevice.html" class="hvr-underline-reveal">Rejestracja urządzenia</a>
+          </li>
+          <li><a href="newOrder.html" class="hvr-underline-reveal">Nowe zlecenie</a>
+          </li>
+          <li><a href="newReportTemplate.html" class="hvr-underline-reveal">Przygotuj zlecenie</a>
+          </li>
+          <li><a href="newReport.html" class="hvr-underline-reveal">Wypełnij raport</a>
+          </li>
+          <li><a href="ordersLookup.html" class="hvr-underline-reveal">Przegląd zleceń</a>
+          </li>
+          <li><a href="databaseLookup.html" class="hvr-underline-reveal">Baza danych</a>
+          </li>
+          <li><a href="calendar.html" class="hvr-underline-reveal">Kalendarz</a>
+          </li>
+          <li><a href="settings.html" class="hvr-underline-reveal">Ustawienia</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="new-device-content" class="content">
+    <h3 style="margin-left: 4%;">Rejestracja nowego urządzenia</h3>
+    <hr>
+    <form id="new-device">
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="deviceType">Rodzaj: </label>
+        </div>
+        <div class="col-md-10">
+          <select class="form-control" id="deviceType" style="width: 40%;" required>
+            <option>Kocioł</option>
+            <option>Palnik</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="deviceManufacturer">Producent: </label>
+        </div>
+        <div class="col-md-10">
+          <select class="form-control" id="deviceManufacturer" style="width: 60%;" required>
+            <option>Giersch</option>
+            <option>Urlich</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="deviceName">Nazwa: </label>
+        </div>
+        <div class="col-md-10">
+          <input type="text" class="form-control" id="deviceName" style="width: 60%;" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="type">Typ: </label>
+        </div>
+        <div class="col-md-10">
+          <select class="form-control" id="type" style="width: 40%;" required>
+            <option>typ1</option>
+            <option>typ2</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="serialNumber">Nr fabryczny: </label>
+        </div>
+        <div class="col-md-10">
+          <input type="text" class="form-control" id="serialNumber" style="width: 60%;" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="deviceYear">Rok: </label>
+        </div>
+        <div class="col-md-4">
+          <input type="number" min="1900" max="2019" class="form-control" id="deviceYear" style="width: 60%;" required>
+        </div>
+        <div class="col-md-2">
+          <label for="devicePower">Moc: </label>
+        </div>
+        <div class="col-md-4">
+          <input type="number" class="form-control" id="devicePower" style="width: 60%;" required>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <button class="btn btn-primary" type="submit">Zapisz</button>
+      </div>
+    </form>
+    <div class="col-md-4 text-center">
+      <a href="newOrder.html" class="btn btn-default">Utwórz zlecenie</a>
+    </div>
+    <!--<hr>
+    <h5 style="margin-left: 4%;">Pola oznaczone gwiazdką są wymagane!</h5>-->
+  </div>
+</body>
+</html>

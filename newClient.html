@@ -1,0 +1,144 @@
+<html lang="pl">
+<head>
+  <title>Marvex - System obsługi zleceń</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width%, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style src="styles.css"></style>
+</head>
+<body>
+  <div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header"><a class="navbar-logo" href="example.html"><img id="logo" src="http://marvex.pl/images/logo2.png" alt="" width="300vh"></a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse navbar-menubuilder">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="newClient.html" class="hvr-underline-reveal">Rejestracja klienta</a>
+          </li>
+          <li><a href="newDevice.html" class="hvr-underline-reveal">Rejestracja urządzenia</a>
+          </li>
+          <li><a href="newOrder.html" class="hvr-underline-reveal">Nowe zlecenie</a>
+          </li>
+          <li><a href="newReportTemplate.html" class="hvr-underline-reveal">Przygotuj zlecenie</a>
+          </li>
+          <li><a href="newReport.html" class="hvr-underline-reveal">Wypełnij raport</a>
+          </li>
+          <li><a href="ordersLookup.html" class="hvr-underline-reveal">Przegląd zleceń</a>
+          </li>
+          <li><a href="databaseLookup.html" class="hvr-underline-reveal">Baza danych</a>
+          </li>
+          <li><a href="calendar.html" class="hvr-underline-reveal">Kalendarz</a>
+          </li>
+          <li><a href="settings.html" class="hvr-underline-reveal">Ustawienia</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="new-client-content" class="content">
+    <h3 style="margin-left: 4%;">Rejestracja nowego klienta</h3>
+    <hr>
+    <h4 style="margin-left: 4%;">Rodzaj klienta:</h4>
+    <button href="#individual-client" class="btn btn-default" data-toggle="collapse" style="margin-left: 5%; font-size: 2.5vh;">Klient indywidualny</button>
+    <button href="#corporate-client" class="btn btn-default" data-toggle="collapse" style="margin-left: 1%; font-size: 2.5vh;">Klient firmowy</button>
+    <form id="new-client">
+        <div id="individual-client" class="collapse">
+          <div class="form-group">
+            <div class="col-md-2">
+              <label for="surname">Nazwisko:</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="surname" style="width: 70%;" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2">
+              <label for="name">Imię:</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="name" style="width: 40%;" required>
+            </div>
+          </div>
+        </div>
+        <div id="corporate-client" class="collapse">
+          <div class="form-group">
+            <div class="col-md-2">
+              <label for="surname">Nazwa:</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="surname" style="width: 85%;" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2">
+              <label for="name">Osoba kontaktowa:</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="name" style="width: 70%;" required>
+            </div>
+          </div>
+        </div>
+      <h4 style="margin-left: 4%;">Dane adresowe:</h4>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="city">Miejscowość: </label>
+        </div>
+        <div class="col-md-10">
+          <select class="form-control" id="city" style="width: 60%;" required>
+            <option>Zduny</option>
+            <option>Kiernozia</option>
+            <option>Chąśno</option>
+            <option>Łowicz</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="street">Ulica: </label>
+        </div>
+        <div class="col-md-10">
+          <input type="text" class="form-control" id="street" style="width: 60%;">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="streetNumber">Nr domu: </label>
+          <input type="number" class="form-control" id="streetNumber" style="width: 35%;" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="flatNumber">Nr mieszkania: </label>
+          <input type="number" class="form-control" id="flatNumber" style="width: 35%;">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="phone">Telefon: </label>
+        </div>
+        <div class="col-md-10">
+          <input type="tel" class="form-control" id="phone" style="width: 65%;" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="mail">Mail: </label>
+        </div>
+        <div class="col-md-10">
+          <input type="emial" class="form-control" id="mail" style="width: 85%;">
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <button class="btn btn-primary" type="submit" >Zapisz</button>
+      </div>
+    </form>
+    <div class="col-md-4 text-center">
+      <a href="newDevice.html" class="btn btn-default">Dodaj urządzenie</a>
+    </div>
+    <!--<hr>
+    <h5 style="margin-left: 4%;">Pola oznaczone gwiazdką są wymagane!</h5>-->
+  </div>
+</body>
+</html>

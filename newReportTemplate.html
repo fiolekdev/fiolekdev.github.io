@@ -1,0 +1,125 @@
+<html lang="pl">
+<head>
+  <title>Marvex - System obsługi zleceń</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style src="styles.css"></style>
+</head>
+<body>
+  <div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header"><a class="navbar-logo" href="example.html"><img id="logo" src="http://marvex.pl/images/logo2.png" alt="" width="300vh"></a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse navbar-menubuilder">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="newClient.html" class="hvr-underline-reveal">Rejestracja klienta</a>
+          </li>
+          <li><a href="newDevice.html" class="hvr-underline-reveal">Rejestracja urządzenia</a>
+          </li>
+          <li><a href="newOrder.html" class="hvr-underline-reveal">Nowe zlecenie</a>
+          </li>
+          <li><a href="newReportTemplate.html" class="hvr-underline-reveal">Przygotuj zlecenie</a>
+          </li>
+          <li><a href="newReport.html" class="hvr-underline-reveal">Wypełnij raport</a>
+          </li>
+          <li><a href="ordersLookup.html" class="hvr-underline-reveal">Przegląd zleceń</a>
+          </li>
+          <li><a href="databaseLookup.html" class="hvr-underline-reveal">Baza danych</a>
+          </li>
+          <li><a href="calendar.html" class="hvr-underline-reveal">Kalendarz</a>
+          </li>
+          <li><a href="settings.html" class="hvr-underline-reveal">Ustawienia</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="new-order-content" class="content">
+    <h3 style="margin-left: 4%;">Przygotowanie raportu</h3>
+    <hr>
+    <button href="#individual-customer" class="btn btn-default" data-toggle="collapse" style="margin-left: 4%; font-size: 2.5vh;">Zleceniodawca indywidualny</button>
+    <button href="#corporate-customer" class="btn btn-default" data-toggle="collapse" style="margin-left: 4%; margin-top: 2%; font-size: 2.5vh;">Zleceniodawca firmowy</button>
+    <form id="new-report-template">
+      <div id="individual-customer" class="collapse">
+        <div class="form-group" style="margin-top: 2%;">
+          <div class="col-md-2">
+            <label for="individualClient">Wybierz klienta: </label>
+          </div>
+          <div class="col-md-10">
+            <select class="form-control" id="individualClient" style="width: 100%;" required>
+              <option>Koza Adam, ul. Cmentarna 45 m. 3, 99-400 Łowicz</option>
+              <option>Fijałkowski Michał, ul. Dygata 4 m. 84, 01-748 Warszawa</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div id="corporate-customer" class="collapse">
+        <div class="form-group" style="margin-top: 2%;">
+          <div class="col-md-2">
+            <label for="corporateClient">Wybierz firmę: </label>
+          </div>
+          <div class="col-md-10">
+            <select class="form-control" id="corporateClient" style="width: 100%;" required>
+              <option>Marvex Marcin Cieślak, ul. Jastrzębska 1, 99-400 Łowicz</option>
+              <option>Palex Jan Kowalski, ul. Górna 12, 99-400 Łowicz</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h4 style="margin-left: 4%;">Dane adresowe i kontakt:</h4>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="reportCompany">Firma: </label>
+        </div>
+        <div class="col-md-10">
+          <input type="text" class="form-control" id="reportCompany" style="width: 80%;">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="reportAdress">Adres: </label>
+        </div>
+        <div class="col-md-10">
+          <input type="text" class="form-control" id="reportAdress" style="width: 90%;">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="reportPhone">Telefon: </label>
+          <input type="phone" class="form-control" id="reportPhone" style="width: 65%;">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="reportMail">Mail: </label>
+          <input type="email" class="form-control" id="reportMail" style="width: 85%;">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group">
+        <div class="col-md-2">
+          <label for="deviceType">Serwisant: </label>
+        </div>
+        <div class="col-md-10">
+          <select class="form-control" id="deviceType" style="width: 40%;" required>
+            <option>Jan Kowalski</option>
+            <option>Michał Kot</option>
+            <option>Kamil Bednarek</option>
+            <option>Szymon Siejka</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <button class="btn btn-primary" type="submit" >Zapisz</button>
+      </div>
+    </form>
+    <div class="col-md-4 text-center">
+      <a href="newReport.html" class="btn btn-default">Wypełnij raport</a>
+    </div>
+  </div>
+</body>
+</html>
