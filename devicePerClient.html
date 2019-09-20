@@ -42,81 +42,76 @@
     </div>
   </div>
   <div id="new-device-content" class="content">
-    <h3 style="margin-left: 4%;">Rejestracja nowego urządzenia</h3>
+    <h3 style="margin-left: 4%;">Przypisanie urządzeń klientowi:</h3>
     <hr>
-    <form id="new-device">
-      <div class="form-group">
+    <form id="device-per-client">
+      <button href="#individual-client" class="btn btn-default" data-toggle="collapse" style="margin-left: 4%; font-size: 2.5vh;">Klient indywidualny</button>
+      <button href="#corporate-client" class="btn btn-default" data-toggle="collapse" style="margin-left: 1%; font-size: 2.5vh;">Klient firmowy</button>
+      <div id="individual-client" class="collapse">
+        <div class="form-group" style="margin-top: 2%;">
+          <div class="col-md-2">
+            <label for="individualClient">Wybierz klienta: </label>
+          </div>
+          <div class="col-md-10">
+            <select class="form-control" id="individualClient" style="width: 100%;" required>
+              <option>Koza Adam, ul. Cmentarna 45 m. 3, 99-400 Łowicz</option>
+              <option>Fijałkowski Michał, ul. Dygata 4 m. 84, 01-748 Warszawa</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div id="corporate-client" class="collapse">
+        <div class="form-group" style="margin-top: 2%;">
+          <div class="col-md-2">
+            <label for="corporateClient">Wybierz klienta: </label>
+          </div>
+          <div class="col-md-10">
+            <select class="form-control" id="corporateClient" style="width: 100%;" required>
+              <option>Marvex Marcin Cieślak, ul. Jastrzębska 1, 99-400 Łowicz</option>
+              <option>Palex Jan Kowalski, ul. Górna 12, 99-400 Łowicz</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="margin-top: 2%;">
         <div class="col-md-2">
-          <label for="deviceType">Rodzaj: </label>
+          <label for="cauldron">Wybierz kocioł: </label>
         </div>
         <div class="col-md-10">
-          <select class="form-control" id="deviceType" style="width: 40%;" required>
-            <option>Kocioł</option>
-            <option>Palnik</option>
+          <select class="form-control" id="cauldron" style="width: 100%;" required>
+            <option>Kocioł 1</option>
+            <option>Kocioł 2</option>
           </select>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group" style="margin-top: 2%;">
         <div class="col-md-2">
-          <label for="deviceManufacturer">Producent: </label>
+          <label for="burner">Dobierz palnik do kotła: </label>
         </div>
         <div class="col-md-10">
-          <select class="form-control" id="deviceManufacturer" style="width: 60%;" required>
-            <option>Giersch</option>
-            <option>Urlich</option>
+          <select class="form-control" id="burner" style="width: 100%;" required>
+            <option>-</option>
+            <option>Palnik 1</option>
+            <option>Palnik 2</option>
           </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-2">
-          <label for="deviceName">Nazwa: </label>
-        </div>
-        <div class="col-md-10">
-          <input type="text" class="form-control" id="deviceName" style="width: 60%;" required>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-2">
-          <label for="type">Typ: </label>
-        </div>
-        <div class="col-md-10">
-          <select class="form-control" id="type" style="width: 40%;" required>
-            <option>typ1</option>
-            <option>typ2</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-2">
-          <label for="serialNumber">Nr fabryczny: </label>
-        </div>
-        <div class="col-md-10">
-          <input type="text" class="form-control" id="serialNumber" style="width: 60%;" required>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-2">
-          <label for="deviceYear">Rok: </label>
-        </div>
-        <div class="col-md-4">
-          <input type="number" min="1900" max="2019" class="form-control" id="deviceYear" style="width: 60%;" required>
-        </div>
-        <div class="col-md-2">
-          <label for="devicePower">Moc: </label>
-        </div>
-        <div class="col-md-4">
-          <input type="number" class="form-control" id="devicePower" style="width: 60%;" required>
         </div>
       </div>
       <div class="col-md-4 text-center">
-        <button class="btn btn-primary" type="submit">Zapisz</button>
+        <button class="btn btn-primary" type="submit" onclick="burnerIntegrationCheck();">Zapisz</button>
       </div>
     </form>
     <div class="col-md-4 text-center">
       <a href="newOrder.html" class="btn btn-default">Utwórz zlecenie</a>
     </div>
-    <!--<hr>
-    <h5 style="margin-left: 4%;">Pola oznaczone gwiazdką są wymagane!</h5>-->
+    <p> </p>
   </div>
-</body>
-</html>
+  <script>
+  function burnerIntegrationCheck() {
+    var selectedBurner = document.getElementById("burner").value;
+    if (selectedBurner == "-") {
+      window.alert("Czy jesteś pewien, że wybrany kocioł ma zintegrowany palnik?");
+    }
+  }
+  </script>
+  </body>
+  </html>
