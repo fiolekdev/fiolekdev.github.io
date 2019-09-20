@@ -41,9 +41,59 @@
       </div>
     </div>
   </div>
-  <div id="settings-content" class="content">
-    <h3 style="margin-left: 4%;">Ustawienia</h3>
+  <div id="database-lookup-content" class="content">
+    <h3 style="margin-left: 4%;">Dane podstawowe</h3>
     <hr>
+    <h4 style="margin-left: 4%;">Rejestracja nowej miejscowości:</h4>
+    <form id="new-city">
+      <div class="form-group">
+        <div class="col-md-3">
+          <label for="city">Miejscowość: </label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" id="city" style="width: 70%;" required>
+        </div>
+        <div class="col-md-3">
+          <label for="postal-code">Kod pocztowy: </label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" id="postal-code" style="width: 50%;" required>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <button class="btn btn-primary" type="submit">Zapisz</button>
+      </div>
+    </form>
+    <hr>
+    <h4 style="margin-left: 4%;">Rejestracja nowego producenta:</h4>
+    <form id="new-manufacturer">
+      <div class="form-group">
+        <div class="col-md-6">
+          <label for="manufacturer">Producent: </label>
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="manufacturer" style="width: 70%;" required>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <button class="btn btn-primary" type="submit">Zapisz</button>
+      </div>
+    </form>
+    <hr>
+    <h4 style="margin-left: 4%;">Rejestracja nowego typu urządzenia:</h4>
+    <form id="new-device-type">
+      <div class="form-group">
+        <div class="col-md-6">
+          <label for="device-type">Typ urządzenia: </label>
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="device-type" style="width: 50%;" required>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <button class="btn btn-primary" type="submit">Zapisz</button>
+      </div>
+    </form>
   </div>
 </body>
 </html>
