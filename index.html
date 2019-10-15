@@ -41,7 +41,24 @@
       </div>
     </div>
   </div>
-  <div id="start-page" class="content">
+  <!--<form style="margin-left: 4%;margin-right: 4%;">-->
+  <div id="login-page" style="margin-left: 4%;margin-right: 4%;">
+    <div class="form-group" style="display: block;">
+      <label for="exampleInputEmail1">Login</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Wprowadź login">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Hasło</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Zapamiętaj mnie</label>
+    </div>
+    <button type="submit" class="btn btn-primary" onclick="login();">Zaloguj</button>
+  </div>
+  <!--</form>-->
+  <div id="start-page" class="content" style="display: none;">
     <h3 style="margin-left: 4%;text-align: center;">Wybierz czynność</h3>
     <hr>
     <div class="col-md-4 text-center">
@@ -66,5 +83,22 @@
       <a href="newReport.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Wypełnij raport</a>
     </div>
   </div>
+  <script>
+
+  function login() {
+    var login = document.getElementById('exampleInputEmail1').value;
+    var password = document.getElementById('exampleInputPassword1').value;
+
+    if (login == "Marcin" && password == "marvex") {
+      document.getElementById('start-page').style.display = "block";
+      document.getElementById('login-page').style.display = "none";
+    } else {
+      alert("Wprowadzono niepoprawny login lub hasło!");
+      document.getElementById('exampleInputEmail1').value = "";
+      document.getElementById('exampleInputPassword1').value = "";
+    }
+  }
+
+  </script>
 </body>
 </html>
