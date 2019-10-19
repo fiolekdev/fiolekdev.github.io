@@ -647,7 +647,7 @@
 
           function generateSteamOverviewReport() {
             // Template
-            alert("Generuję raport...");
+            //alert("Generuję raport...");
             var report = new jsPDF();
             var pageHeight = report.internal.pageSize.height || report.internal.pageSize.getHeight();
             var pageWidth = report.internal.pageSize.width || report.internal.pageSize.getWidth();
@@ -659,7 +659,13 @@
             // Logo and title
             report.addImage(logoDataMarvex, "PNG", 150, 10, 50, 11.15);
             report.text("LISTA KONTROLNA KOTLOWNI PAROWEJ", pageWidth/2, 35, "center");
+
+            // First page
+            
+
+
             report.save("przeglad_kotla_parowego.pdf");
+
 
           }
 
