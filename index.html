@@ -3,9 +3,9 @@
   <title>Marvex - System obsługi zleceń</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style src="styles.css"></style>
 </head>
 <body>
@@ -17,88 +17,131 @@
       </div>
       <div class="collapse navbar-collapse navbar-menubuilder">
         <ul class="nav navbar-nav navbar-left">
-          <li><a href="basicData.html" class="hvr-underline-reveal">Wprowadzanie danych podstawowych</a>
-          </li>
-          <li><a href="newClient.html" class="hvr-underline-reveal">Rejestracja klienta</a>
-          </li>
-          <li><a href="newDevice.html" class="hvr-underline-reveal">Rejestracja urządzenia</a>
-          </li>
-          <li><a href="devicePerClient.html" class="hvr-underline-reveal">Przypisanie urządzeń klientowi</a>
-          </li>
-          <li><a href="newOrder.html" class="hvr-underline-reveal">Nowe zlecenie</a>
-          </li>
-          <li><a href="newReportTemplate.html" class="hvr-underline-reveal">Przygotuj zlecenie</a>
-          </li>
-          <li><a href="newReport.html" class="hvr-underline-reveal">Wypełnij raport</a>
-          </li>
-          <li><a href="ordersLookup.html" class="hvr-underline-reveal">Przegląd zleceń</a>
-          </li>
-          <li><a href="calendar.html" class="hvr-underline-reveal">Kalendarz</a>
-          </li>
-          <li><a href="settings.html" class="hvr-underline-reveal">Ustawienia</a>
-          </li>
-        </ul>
+          <li>
+            <div class="dropdown show">
+              <a href="" class="btn btn-secondary dropdown-toggle" role="button" id="orderMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zlecenie - czynności</a>
+              <div class="dropdown-menu" aria-labelledby="orderMenu">
+                <ul class="nav navbar-nav navbar-left" style="margin-left: 15%;">
+                  <li><a href="basicData.html" class="hvr-underline-reveal">Wprowadzenie danych podstawowych</a>
+                  </li>
+                  <li><a href="newClient.html" class="hvr-underline-reveal">Rejestracja klienta</a>
+                  </li>
+                  <li><a href="newDevice.html" class="hvr-underline-reveal">Rejestracja urządzenia</a>
+                  </li>
+                  <li><a href="devicePerClient.html" class="hvr-underline-reveal">Przypisanie urządzeń klientowi</a>
+                  </li>
+                  <li><a href="newOrder.html" class="hvr-underline-reveal">Dodanie nowego zlecenia</a>
+                  </li>
+                  <li><a href="newReportTemplate.html" class="hvr-underline-reveal">Przygotowanie szablonu zlecenia</a>
+                  </li>
+                  <li><a href="newReport.html" class="hvr-underline-reveal">Wypełnienie raportu serwisowego</a>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li><a href="ordersLookup.html" class="hvr-underline-reveal">Przegląd zleceń</a>
+            </li>
+            <li><a href="clientsLookup.html" class="hvr-underline-reveal">Baza klientów</a>
+            </li>
+            <li><a href="devicesLookup.html" class="hvr-underline-reveal">Baza urządzeń</a>
+            </li>
+            <li><a href="calendar.html" class="hvr-underline-reveal">Kalendarz</a>
+            </li>
+            <li><a href="settings.html" class="hvr-underline-reveal">Ustawienia</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <!--<form style="margin-left: 4%;margin-right: 4%;">-->
-  <div id="login-page" style="margin-left: 4%;margin-right: 4%;display: none;">
-    <div class="form-group" style="display: block;">
-      <label for="exampleInputEmail1">Login</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Wprowadź login">
+    <!--<form style="margin-left: 4%;margin-right: 4%;">-->
+    <!-- Login view -->
+    <div id="login-page" style="margin-left: 4%;margin-right: 4%;display: none;">
+      <div class="form-group" style="display: block;">
+        <label for="exampleInputEmail1">Login</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Wprowadź login">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Hasło</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło">
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Zapamiętaj mnie</label>
+      </div>
+      <button type="submit" class="btn btn-primary" onclick="login();">Zaloguj</button>
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Hasło</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło">
-    </div>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Zapamiętaj mnie</label>
-    </div>
-    <button type="submit" class="btn btn-primary" onclick="login();">Zaloguj</button>
-  </div>
-  <!--</form>-->
-  <div id="start-page" class="content" style="display: block;">
-    <h3 style="margin-left: 4%;text-align: center;">Wybierz czynność</h3>
-    <hr>
-    <div class="col-md-4 text-center">
-      <a href="basicData.html" class="btn btn-default" style="font-size: 2.5vh;">Dane podstawowe</a>
-    </div>
-    <div class="col-md-4 text-center">
-      <a href="newClient.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Dodaj nowego klienta</a>
-    </div>
-    <div class="col-md-4 text-center">
-      <a href="newDevice.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Dodaj nowe urządzenie</a>
-    </div>
-    <div class="col-md-4 text-center">
-      <a href="devicePerClient.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Przypisz urządzenia klientowi</a>
-    </div>
-    <div class="col-md-4 text-center">
-      <a href="newOrder.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Utwórz nowe zlecenie</a>
-    </div>
-    <div class="col-md-4 text-center">
-      <a href="newReportTemplate.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Przygotuj raport</a>
-    </div>
-    <div class="col-md-4 text-center">
-      <a href="newReport.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Wypełnij raport</a>
-    </div>
-  </div>
-  <script>
+    <!--</form>-->
 
-  function login() {
-    var login = document.getElementById('exampleInputEmail1').value;
-    var password = document.getElementById('exampleInputPassword1').value;
+    <!-- Orders lookup -->
+    <div id="order-lookup-content" class="content">
+      <h3 style="margin-left: 4%;">Przegląd zleceń</h3>
+      <hr>
+      <ul class="nav nav-tabs" style="margin-left: 4%; margin-right: 4%;">
+        <li class="active"><a data-toggle="tab" href="#home">Nowe</a></li>
+        <li><a data-toggle="tab" href="#menu1">Rozpoczęte</a></li>
+        <li><a data-toggle="tab" href="#menu2">Zrealizowane</a></li>
+      </ul>
+      <div class="tab-content" style="margin-left: 4%; margin-right: 4%; margin-top: 5%;">
+        <div id="home" class="tab-pane fade in active">
+          <h4>Nowe zlecenia</h4>
+          <p>Tutaj będą widoczne nowe zlecenia pobrane z bazy danych.</p>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+          <h4>Zlecenia przekazane do realizacji</h4>
+          <p>Tutaj będą widoczne rozpoczęte zlecenia pobrane z bazy danych.</p>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+          <h4>Zlecenia zrealizowane</h4>
+          <p>Tutaj będą widoczne zrealizowane zlecenia pobrane z bazy danych.</p>
+        </div>
+      </div>
+      <p> </p>
+      <hr>
+    </div>
 
-    if (login == "Marcin" && password == "marvex") {
-      document.getElementById('start-page').style.display = "block";
-      document.getElementById('login-page').style.display = "none";
-    } else {
-      alert("Wprowadzono niepoprawny login lub hasło!");
-      document.getElementById('exampleInputEmail1').value = "";
-      document.getElementById('exampleInputPassword1').value = "";
+    <!-- Shortcuts view -->
+    <div class="col-md-4 text-center">
+      <button href="#shorcuts-container" class="btn btn-default" data-toggle="collapse" style="font-size: 2.5vh;">Skórty do obsługi zleceń:</button>
+    </div>
+    <div id="shorcuts-container" class="collapse">
+      <div class="col-md-4 text-center">
+        <a href="basicData.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Dane podstawowe</a>
+      </div>
+      <div class="col-md-4 text-center">
+        <a href="newClient.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Dodaj nowego klienta</a>
+      </div>
+      <div class="col-md-4 text-center">
+        <a href="newDevice.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Dodaj nowe urządzenie</a>
+      </div>
+      <div class="col-md-4 text-center">
+        <a href="devicePerClient.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Przypisz urządzenia klientowi</a>
+      </div>
+      <div class="col-md-4 text-center">
+        <a href="newOrder.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Utwórz nowe zlecenie</a>
+      </div>
+      <div class="col-md-4 text-center">
+        <a href="newReportTemplate.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Przygotuj raport</a>
+      </div>
+      <div class="col-md-4 text-center">
+        <a href="newReport.html" class="btn btn-default" style="margin-top: 4%; font-size: 2.5vh;">Wypełnij raport</a>
+      </div>
+    </div>
+    <script>
+
+    function login() {
+      var login = document.getElementById('exampleInputEmail1').value;
+      var password = document.getElementById('exampleInputPassword1').value;
+
+      if (login == "Marcin" && password == "marvex") {
+        document.getElementById('shorcuts-page').style.display = "block";
+        document.getElementById('login-page').style.display = "none";
+      } else {
+        alert("Wprowadzono niepoprawny login lub hasło!");
+        document.getElementById('exampleInputEmail1').value = "";
+        document.getElementById('exampleInputPassword1').value = "";
+      }
     }
-  }
 
-  </script>
-</body>
-</html>
+    </script>
+  </body>
+  </html>
