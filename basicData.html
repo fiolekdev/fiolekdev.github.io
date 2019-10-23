@@ -45,19 +45,19 @@
     <h3 style="margin-left: 4%;">Dane podstawowe</h3>
     <hr>
     <h4 style="margin-left: 4%;">Rejestracja nowej miejscowości:</h4>
-    <form id="new-city">
+    <form id="new-city" action="cities.php" method="post">
       <div class="form-group">
         <div class="col-md-3">
           <label for="city">Miejscowość: </label>
         </div>
         <div class="col-md-3">
-          <input type="text" class="form-control" id="city" style="width: 70%;" required>
+          <input type="text" class="form-control" id="city" name="city" style="width: 70%;" required>
         </div>
         <div class="col-md-3">
           <label for="postal-code">Kod pocztowy: </label>
         </div>
         <div class="col-md-3">
-          <input type="text" class="form-control" id="postal-code" style="width: 50%;" required>
+          <input type="text" class="form-control" id="postal-code" name="postalCode" style="width: 50%;" required>
         </div>
       </div>
       <div class="col-md-4 text-center">
