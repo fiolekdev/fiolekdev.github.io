@@ -7,6 +7,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <style src="styles.css"></style>
+  <style>
+  table, th, td {
+    table-layout: fixed;
+    border: 1px solid black;
+  }
+  th, td {
+    word-wrap: break-word;
+    padding: 2px;
+  }
+  </style>
 </head>
 <body>
   <div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
@@ -56,6 +66,27 @@
   <div id="settings-content" class="content">
     <h3 style="margin-left: 4%;">Baza urządzeń</h3>
     <hr>
+    <table style="width: 92%;margin-left: 4%;margin-right: 4%;">
+      <tr>
+        <th>Typ</th>
+        <th>Producent</th>
+        <th>Nazwa</th>
+        <th>Nr fabryczny</th>
+      </tr>
+      <!-- Example hardcoded data -->
+      <tr>
+        <td>Kocioł</td>
+        <td>Viessmann</td>
+        <td>Vitomax 200-HS</td>
+        <td>12893090129</td>
+      </tr>
+      <tr>
+        <td>Palnik</td>
+        <td>Viessmann</td>
+        <td>Vitomax 200-HS</td>
+        <td>12812390129</td>
+      </tr>
+    </table>
   </div>
 </body>
 </html>

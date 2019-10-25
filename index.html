@@ -7,6 +7,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style src="styles.css"></style>
+  <style>
+  table, th, td {
+    table-layout: fixed;
+    border: 1px solid black;
+  }
+  th, td {
+    word-wrap: break-word;
+    padding: 2px;
+  }
+  </style>
 </head>
 <body>
   <div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
@@ -76,23 +86,110 @@
     <div id="order-lookup-content" class="content">
       <h3 style="margin-left: 4%;">Przegląd zleceń</h3>
       <hr>
-      <ul class="nav nav-tabs" style="margin-left: 4%; margin-right: 4%;">
-        <li class="active"><a data-toggle="tab" href="#home">Nowe</a></li>
-        <li><a data-toggle="tab" href="#menu1">Rozpoczęte</a></li>
-        <li><a data-toggle="tab" href="#menu2">Zrealizowane</a></li>
+      <ul class="nav nav-tabs" style="margin-left: 2%; margin-right: 2%;">
+        <li class="active"><a data-toggle="tab" href="#new">Nowe</a></li>
+        <li><a data-toggle="tab" href="#started">Rozpoczęte</a></li>
+        <li><a data-toggle="tab" href="#done">Zrealizowane</a></li>
       </ul>
-      <div class="tab-content" style="margin-left: 4%; margin-right: 4%; margin-top: 5%;">
-        <div id="home" class="tab-pane fade in active">
+      <div class="tab-content" style="margin-left: 2%; margin-right: 2%; margin-top: 5%;">
+        <div id="new" class="tab-pane fade in active">
           <h4>Nowe zlecenia</h4>
-          <p>Tutaj będą widoczne nowe zlecenia pobrane z bazy danych.</p>
+          <!--<p>Tutaj będą widoczne nowe zlecenia pobrane z bazy danych.</p>
+          <br>
+          <h5>Przykładowe dane:</h5>-->
+          <table>
+            <tr>
+              <th>Nr</th>
+              <th>Data zgł.</th>
+              <th>Klient</th>
+              <th>Typ</th>
+            </tr>
+            <!-- Example hardcoded data -->
+            <tr>
+              <td>1/SW/23/M</td>
+              <td>23.10.2019</td>
+              <td>Palex</td>
+              <td>przegląd</td>
+            </tr>
+            <tr>
+              <td>2/SW/24/M</td>
+              <td>24.10.2019</td>
+              <td>Michał Fijałkowski</td>
+              <td>uruchomienie</td>
+            </tr>
+            <tr>
+              <td>3/SW/24/M</td>
+              <td>24.10.2019</td>
+              <td>Szymon Kozioł</td>
+              <td>uruchomienie</td>
+            </tr>
+            <tr>
+              <td>4/SW/24/M</td>
+              <td>24.10.2019</td>
+              <td>Robyg</td>
+              <td>naprawa</td>
+            </tr>
+          </table>
         </div>
-        <div id="menu1" class="tab-pane fade">
+        <div id="started" class="tab-pane fade">
           <h4>Zlecenia przekazane do realizacji</h4>
-          <p>Tutaj będą widoczne rozpoczęte zlecenia pobrane z bazy danych.</p>
+          <!--<p>Tutaj będą widoczne rozpoczęte zlecenia pobrane z bazy danych.</p>
+          <br>
+          <h5>Przykładowe dane:</h5>-->
+          <table>
+            <tr>
+              <th>Nr</th>
+              <th>Data zgł.</th>
+              <th>Klient</th>
+              <th>Typ</th>
+            </tr>
+            <!-- Example hardcoded data -->
+            <tr>
+              <td>4/SW/23/M</td>
+              <td>02.08.2019</td>
+              <td>Robyg</td>
+              <td>uruchomienie</td>
+            </tr>
+            <tr>
+              <td>7/SW/24/M</td>
+              <td>21.09.2019</td>
+              <td>Jan Kowlaski</td>
+              <td>uruchomienie</td>
+            </tr>
+          </table>
         </div>
-        <div id="menu2" class="tab-pane fade">
+        <div id="done" class="tab-pane fade">
           <h4>Zlecenia zrealizowane</h4>
-          <p>Tutaj będą widoczne zrealizowane zlecenia pobrane z bazy danych.</p>
+          <!--<p>Tutaj będą widoczne zrealizowane zlecenia pobrane z bazy danych.</p>
+          <br>
+          <h5>Przykładowe dane:</h5>-->
+          <table>
+            <tr>
+              <th>Nr</th>
+              <th>Data zgł.</th>
+              <th>Klient</th>
+              <th>Typ</th>
+            </tr>
+            <!-- Example hardcoded data -->
+            <tr>
+              <td>9/SW/23/M</td>
+              <td>02.04.2019</td>
+              <td>DomDev</td>
+              <td>przegląd</td>
+            </tr>
+            <tr>
+              <td>12/SW/24/M</td>
+              <td>23.05.2019</td>
+              <td>Michał Jóźwik</td>
+              <td>przegląd</td>
+            </tr>
+            <tr>
+              <td>13/SW/24/M</td>
+              <td>24.05.2019</td>
+              <td>Jan Kowlaksi</td>
+              <td>naprawa</td>
+            </tr>
+          </table>
         </div>
       </div>
       <p> </p>
@@ -101,7 +198,7 @@
 
     <!-- Shortcuts view -->
     <div class="col-md-4 text-center">
-      <button href="#shorcuts-container" class="btn btn-default" data-toggle="collapse" style="font-size: 2.5vh;">Skórty do obsługi zleceń:</button>
+      <button href="#shorcuts-container" class="btn btn-default" data-toggle="collapse" style="font-size: 2.5vh;">Skórty do obsługi zleceń</button>
     </div>
     <div id="shorcuts-container" class="collapse">
       <div class="col-md-4 text-center">

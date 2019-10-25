@@ -1,3 +1,10 @@
+<?php
+include_once('connection.php');
+$query="select 'miejscowosc' from miejscowosci";
+$result=mysql_query($query);
+?>
+
+<!DOCTYPE html>
 <html lang="pl">
 <head>
   <title>Marvex - System obsługi zleceń</title>
@@ -53,107 +60,115 @@
         </div>
       </div>
     </div>
-  <div id="new-client-content" class="content">
-    <h3 style="margin-left: 4%;">Rejestracja nowego klienta</h3>
-    <hr>
-    <h4 style="margin-left: 4%;">Rodzaj klienta:</h4>
-    <button href="#individual-client" class="btn btn-default" data-toggle="collapse" style="margin-left: 5%; font-size: 2.5vh;">Klient indywidualny</button>
-    <button href="#corporate-client" class="btn btn-default" data-toggle="collapse" style="margin-left: 1%; font-size: 2.5vh;">Klient firmowy</button>
-    <form id="new-client">
-      <div id="individual-client" class="collapse">
+    <div id="new-client-content" class="content">
+      <h3 style="margin-left: 4%;">Rejestracja nowego klienta</h3>
+      <hr>
+      <h4 style="margin-left: 4%;">Rodzaj klienta:</h4>
+      <button href="#individual-client" class="btn btn-default" data-toggle="collapse" style="margin-left: 5%; font-size: 2.5vh;">Klient indywidualny</button>
+      <button href="#corporate-client" class="btn btn-default" data-toggle="collapse" style="margin-left: 1%; font-size: 2.5vh;">Klient firmowy</button>
+      <form id="new-client" action="clients.php" method="post">
+        <div id="individual-client" class="collapse">
+          <div class="form-group">
+            <div class="col-md-2">
+              <label for="surname">Nazwisko:</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="surname" style="width: 70%;" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2">
+              <label for="name">Imię:</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="name" style="width: 40%;" required>
+            </div>
+          </div>
+        </div>
+        <div id="corporate-client" class="collapse">
+          <div class="form-group">
+            <div class="col-md-2">
+              <label for="companyName">Nazwa:</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="companyName" style="width: 85%;" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-2">
+              <label for="contactPerson">Osoba kontaktowa:</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="contactPerson" style="width: 70%;" required>
+            </div>
+          </div>
+        </div>
+        <h4 style="margin-left: 4%;">Dane adresowe:</h4>
         <div class="form-group">
           <div class="col-md-2">
-            <label for="surname">Nazwisko:</label>
+            <label for="city">Miejscowość: </label>
           </div>
           <div class="col-md-10">
-            <input type="text" class="form-control" id="surname" style="width: 70%;" required>
+            <select class="form-control" id="city" style="width: 60%;" required>
+              <option>Zduny</option>
+              <option>Kiernozia</option>
+              <option>Chąśno</option>
+              <option>Łowicz</option>
+              <!-- Cities taken from database -->
+              <?php
+                while($rows=mysql_fetch_assoc($result)) {
+              ?>
+                <option><?php echo $rows['miejscowosc']; ?></option>
+              <?php
+                }
+              ?>
+            </select>
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-2">
-            <label for="name">Imię:</label>
+            <label for="street">Ulica: </label>
           </div>
           <div class="col-md-10">
-            <input type="text" class="form-control" id="name" style="width: 40%;" required>
+            <input type="text" class="form-control" id="street" style="width: 60%;">
           </div>
         </div>
-      </div>
-      <div id="corporate-client" class="collapse">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="streetNumber">Nr domu: </label>
+            <input type="number" class="form-control" id="streetNumber" style="width: 35%;" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="flatNumber">Nr mieszkania: </label>
+            <input type="number" class="form-control" id="flatNumber" style="width: 35%;">
+          </div>
+        </div>
         <div class="form-group">
           <div class="col-md-2">
-            <label for="surname">Nazwa:</label>
+            <label for="phone">Telefon: </label>
           </div>
           <div class="col-md-10">
-            <input type="text" class="form-control" id="surname" style="width: 85%;" required>
+            <input type="tel" class="form-control" id="phone" style="width: 65%;" required>
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-2">
-            <label for="name">Osoba kontaktowa:</label>
+            <label for="mail">Mail: </label>
           </div>
           <div class="col-md-10">
-            <input type="text" class="form-control" id="name" style="width: 70%;" required>
+            <input type="emial" class="form-control" id="mail" style="width: 85%;">
           </div>
         </div>
-      </div>
-      <h4 style="margin-left: 4%;">Dane adresowe:</h4>
-      <div class="form-group">
-        <div class="col-md-2">
-          <label for="city">Miejscowość: </label>
+        <div class="col-md-4 text-center">
+          <button class="btn btn-primary" type="submit" >Zapisz</button>
         </div>
-        <div class="col-md-10">
-          <select class="form-control" id="city" style="width: 60%;" required>
-            <option>Zduny</option>
-            <option>Kiernozia</option>
-            <option>Chąśno</option>
-            <option>Łowicz</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-2">
-          <label for="street">Ulica: </label>
-        </div>
-        <div class="col-md-10">
-          <input type="text" class="form-control" id="street" style="width: 60%;">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="streetNumber">Nr domu: </label>
-          <input type="number" class="form-control" id="streetNumber" style="width: 35%;" required>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="flatNumber">Nr mieszkania: </label>
-          <input type="number" class="form-control" id="flatNumber" style="width: 35%;">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-2">
-          <label for="phone">Telefon: </label>
-        </div>
-        <div class="col-md-10">
-          <input type="tel" class="form-control" id="phone" style="width: 65%;" required>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-2">
-          <label for="mail">Mail: </label>
-        </div>
-        <div class="col-md-10">
-          <input type="emial" class="form-control" id="mail" style="width: 85%;">
-        </div>
-      </div>
+      </form>
       <div class="col-md-4 text-center">
-        <button class="btn btn-primary" type="submit" >Zapisz</button>
+        <a href="newDevice.html" class="btn btn-default">Dodaj urządzenie</a>
       </div>
-    </form>
-    <div class="col-md-4 text-center">
-      <a href="newDevice.html" class="btn btn-default">Dodaj urządzenie</a>
+      <!--<hr>
+      <h5 style="margin-left: 4%;">Pola oznaczone gwiazdką są wymagane!</h5>-->
     </div>
-    <!--<hr>
-    <h5 style="margin-left: 4%;">Pola oznaczone gwiazdką są wymagane!</h5>-->
-  </div>
-  <p> </p>
-</body>
-</html>
+    <p> </p>
+  </body>
+  </html>

@@ -7,6 +7,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <style src="styles.css"></style>
+  <style>
+  table, th, td {
+    table-layout: fixed;
+    border: 1px solid black;
+  }
+  th, td {
+    word-wrap: break-word;
+    padding: 2px;
+  }
+  </style>
 </head>
 <body>
   <div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
@@ -56,6 +66,51 @@
   <div id="settings-content" class="content">
     <h3 style="margin-left: 4%;">Baza klientów</h3>
     <hr>
+    <h4 style="margin-left: 4%;">Klienci indywidualni</h4>
+    <table style="width: 92%;margin-left: 4%;margin-right: 4%;">
+      <tr>
+        <th>Nazwisko</th>
+        <th>Imię</th>
+        <th>Miejscowość</th>
+        <th>Telefon</th>
+      </tr>
+      <!-- Example hardcoded data -->
+      <tr>
+        <td>Koza</td>
+        <td>Adam</td>
+        <td>Łowicz</td>
+        <td>600123453</td>
+      </tr>
+      <tr>
+        <td>Fijałkowski</td>
+        <td>Michał</td>
+        <td>Warszawa</td>
+        <td>604069274</td>
+      </tr>
+    </table>
+    <br>
+    <h4 style="margin-left: 4%;">Klienci firmowi</h4>
+    <table style="width: 92%;margin-left: 4%;margin-right: 4%;">
+      <tr>
+        <th>Nazwa</th>
+        <th>Osoba kontaktowa</th>
+        <th>Miejscowość</th>
+        <th>Telefon</th>
+      </tr>
+      <!-- Example hardcoded data -->
+      <tr>
+        <td>Marvex</td>
+        <td>Marcin Cieślak</td>
+        <td>Mysłaków</td>
+        <td>829123987</td>
+      </tr>
+      <tr>
+        <td>Palex</td>
+        <td>Jan Kowalski</td>
+        <td>Łowicz</td>
+        <td>604231274</td>
+      </tr>
+    </table>
   </div>
 </body>
 </html>
