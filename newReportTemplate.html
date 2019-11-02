@@ -19,7 +19,7 @@
         <ul class="nav navbar-nav navbar-left">
           <li>
             <div class="dropdown show">
-              <a href="" class="btn btn-secondary dropdown-toggle" role="button" id="orderMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zlecenie - czynności</a>
+              <a href="" class="btn btn-secondary dropdown-toggle" role="button" id="orderMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Obsługa zlecenia</a>
               <div class="dropdown-menu" aria-labelledby="orderMenu">
                 <ul class="nav navbar-nav navbar-left" style="margin-left: 15%;">
                   <li><a href="basicData.html" class="hvr-underline-reveal">Wprowadzenie danych podstawowych</a>
@@ -118,7 +118,7 @@
         <div class="col-md-2">
           <label for="deviceType">Serwisant: </label>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-6">
           <select class="form-control" id="deviceType" style="width: 40%;" required>
             <option>Jan Kowalski</option>
             <option>Michał Kot</option>
@@ -127,7 +127,10 @@
           </select>
         </div>
       </div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-4" style="margin-top: 2%;">
+        <a href="basicData.html#new-serviceman" class="btn btn-default"> + Dodaj </a>
+      </div>
+      <div class="col-md-4 text-center" style="margin-top: 4%;">
         <button class="btn btn-primary" type="submit" >Zapisz</button>
       </div>
     </form>

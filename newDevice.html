@@ -19,7 +19,7 @@
         <ul class="nav navbar-nav navbar-left">
           <li>
             <div class="dropdown show">
-              <a href="" class="btn btn-secondary dropdown-toggle" role="button" id="orderMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zlecenie - czynności</a>
+              <a href="" class="btn btn-secondary dropdown-toggle" role="button" id="orderMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Obsługa zlecenia</a>
               <div class="dropdown-menu" aria-labelledby="orderMenu">
                 <ul class="nav navbar-nav navbar-left" style="margin-left: 15%;">
                   <li><a href="basicData.html" class="hvr-underline-reveal">Wprowadzenie danych podstawowych</a>
@@ -72,11 +72,14 @@
         <div class="col-md-2">
           <label for="deviceManufacturer">Producent: </label>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-6">
           <select class="form-control" id="deviceManufacturer" style="width: 60%;" required>
             <option>Giersch</option>
             <option>Urlich</option>
           </select>
+        </div>
+        <div class="col-md-4" style="margin-top: 2%;">
+          <a href="basicData.html#new-manufacturer" class="btn btn-default"> + Dodaj </a>
         </div>
       </div>
       <div class="form-group">
@@ -91,11 +94,14 @@
         <div class="col-md-2">
           <label for="type">Typ: </label>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-6">
           <select class="form-control" id="type" style="width: 40%;" required>
             <option>typ1</option>
             <option>typ2</option>
           </select>
+        </div>
+        <div class="col-md-4" style="margin-top: 2%;">
+          <a href="basicData.html#new-device-type" class="btn btn-default"> + Dodaj </a>
         </div>
       </div>
       <div class="form-group">
@@ -124,7 +130,7 @@
         <button class="btn btn-primary" type="submit">Zapisz</button>
       </div>
     </form>
-    <div class="col-md-4 text-center">
+    <div class="col-md-4 text-center" style="margin-top: 2%;">
       <a href="devicePerClient.html" class="btn btn-default">Przypisz urządzenia klientowi</a>
     </div>
     <p> </p>

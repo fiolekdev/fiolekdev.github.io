@@ -19,7 +19,7 @@
         <ul class="nav navbar-nav navbar-left">
           <li>
             <div class="dropdown show">
-              <a href="" class="btn btn-secondary dropdown-toggle" role="button" id="orderMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zlecenie - czynności</a>
+              <a href="" class="btn btn-secondary dropdown-toggle" role="button" id="orderMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Obsługa zlecenia</a>
               <div class="dropdown-menu" aria-labelledby="orderMenu">
                 <ul class="nav navbar-nav navbar-left" style="margin-left: 15%;">
                   <li><a href="basicData.html" class="hvr-underline-reveal">Wprowadzenie danych podstawowych</a>
@@ -103,6 +103,21 @@
         </div>
       </div>
       <div class="col-md-4 text-center">
+        <button class="btn btn-primary" type="submit">Zapisz</button>
+      </div>
+    </form>
+    <hr>
+    <h4 style="margin-left: 4%;">Rejestracja nowego serwisanta:</h4>
+    <form id="new-serviceman" action="servicemen.php" method="post">
+      <div class="form-group">
+        <div class="col-md-6">
+          <label for="serviceman">Imię i nazwisko: </label>
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="serviceman" style="width: 70%;" required>
+        </div>
+      </div>
+      <div class="col-md-4 text-center" style="margin-top: 4%;">
         <button class="btn btn-primary" type="submit">Zapisz</button>
       </div>
     </form>
