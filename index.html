@@ -8,13 +8,31 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style src="styles.css"></style>
   <style>
+  #search {
+  background-image: url('https://image.flaticon.com/icons/svg/49/49116.svg'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 4%; /* Add some space below the input */
+  margin-left: 4%;
+  width: 92%;
+}
   table, th, td {
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
     table-layout: fixed;
     border: 1px solid black;
   }
   th, td {
     word-wrap: break-word;
     padding: 2px;
+  }
+  tr:hover {
+    background-color: #f1f1f1;
   }
   </style>
 </head>
@@ -49,7 +67,7 @@
                 </div>
               </div>
             </li>
-            <li><a href="ordersLookup.html" class="hvr-underline-reveal">Przegląd zleceń</a>
+            <li><a href="index.html" class="hvr-underline-reveal">Przegląd zleceń</a>
             </li>
             <li><a href="clientsLookup.html" class="hvr-underline-reveal">Baza klientów</a>
             </li>
@@ -86,6 +104,9 @@
     <div id="order-lookup-content" class="content">
       <h3 style="margin-left: 4%;">Przegląd zleceń</h3>
       <hr>
+
+      <input type="text" id="search" onkeyup="search()" placeholder="Wyszukaj klienta..">
+
       <ul class="nav nav-tabs" style="margin-left: 2%; margin-right: 2%;">
         <li class="active"><a data-toggle="tab" href="#new">Nowe</a></li>
         <li><a data-toggle="tab" href="#started">Rozpoczęte</a></li>
@@ -97,7 +118,7 @@
           <!--<p>Tutaj będą widoczne nowe zlecenia pobrane z bazy danych.</p>
           <br>
           <h5>Przykładowe dane:</h5>-->
-          <table>
+          <table id="new-orders">
             <tr>
               <th>Nr</th>
               <th>Data zgł.</th>
@@ -136,7 +157,7 @@
           <!--<p>Tutaj będą widoczne rozpoczęte zlecenia pobrane z bazy danych.</p>
           <br>
           <h5>Przykładowe dane:</h5>-->
-          <table>
+          <table id="started-orders">
             <tr>
               <th>Nr</th>
               <th>Data zgł.</th>
@@ -163,7 +184,7 @@
           <!--<p>Tutaj będą widoczne zrealizowane zlecenia pobrane z bazy danych.</p>
           <br>
           <h5>Przykładowe dane:</h5>-->
-          <table>
+          <table id="done-orders">
             <tr>
               <th>Nr</th>
               <th>Data zgł.</th>
@@ -240,6 +261,31 @@
         document.getElementById('exampleInputEmail1').value = "";
         document.getElementById('exampleInputPassword1').value = "";
       }
+    }
+
+    function search() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("search");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("new-orders");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+
+          td = tr[i].getElementsByTagName("td")[2];
+
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+
     }
 
     </script>
