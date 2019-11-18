@@ -39,7 +39,7 @@
                 </div>
               </div>
             </li>
-            <li><a href="ordersLookup.html" class="hvr-underline-reveal">Przegląd zleceń</a>
+            <li><a href="index.html" class="hvr-underline-reveal">Przegląd zleceń</a>
             </li>
             <li><a href="clientsLookup.html" class="hvr-underline-reveal">Baza klientów</a>
             </li>
@@ -59,10 +59,13 @@
     <form id="new-order">
       <div class="form-group">
         <div class="col-md-2">
-          <label for="orderDate">Data zgłoszenia: </label>
+          <label for="orderDate">Data i godzina zgłoszenia: </label>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-6">
           <input type="date" class="form-control" id="orderDate" style="width: 60%;" required>
+        </div>
+        <div class="col-md-4">
+          <input type="time" class="form-control" id="orderTime" name="orderTime" style="width: 30%; margin-top: 2%;">
         </div>
       </div>
       <button href="#individual-client" class="btn btn-default" data-toggle="collapse" style="margin-left: 4%; font-size: 2.5vh;">Klient indywidualny</button>
